@@ -17,6 +17,7 @@ drug <- read.delim("phs000007.v30.pht000828.v6.p11.c1.meds1_8s.HMB-IRB-MDS.txt",
 bmd <- read.delim("phs000007.v30.pht003096.v2.p11.c1.t_bmdhs_2008_1_0748s.HMB-IRB-MDS.txt",
                   skip=10,header=T,stringsAsFactors = F)
 
+
 # Filter Exam 8 people ####
 off8 <- offdate %>% 
   select(shareid,age8,att8,date8,idtype) %>% 
@@ -121,5 +122,7 @@ levels(pheno3$B1B) <- c("No", "Non-selective", "B1-Selective")
 pheno3$B1B[pheno3$B1 == "Yes"]<- "B1-Selective"
 table(pheno3$B1B)
 table(pheno3$BB)
-setwd("/home/clary@mmcf.mehealth.org/Framingham/OmicData/data")
-write.csv(pheno3,"PhenoData_5_28.csv", row.names = F)
+setwd("/home/clary@mmcf.mehealth.org/Framingham/OmicData/MMC/data")
+#write.csv(pheno3,"PhenoData_5_28.csv", row.names = F)
+LDL <- cov %>% select(., shareid, SBP8, DBP8, CALC_LDL8, TC8)
+write.csv(LDL, "LDL_cov.csv", quote = F, row.names = F)

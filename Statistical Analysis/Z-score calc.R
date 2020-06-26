@@ -29,3 +29,10 @@ miRNA_pheno <- merge(miRNAdat, pheno_1, by = "shareid")
 
 cor.test.plus(cor.test(miRNA_pheno$miR_19a_3p, miRNA_pheno$zscore))
 cor.test.plus(cor.test(miRNA_pheno$miR_186_5p_a2, miRNA_pheno$zscore))
+
+hist(miRNA_pheno$miR_19a_3p, main = "Histogram of miR-19a-3p", xlab = "| \u0394 Cq | of miR-19a-3p")
+summary(miRNA_pheno$miR_19a_3p)
+sd(miRNA_pheno$miR_19a_3p, na.rm = T)
+hist(miRNA_pheno$miR_186_5p_a2,  main = "Histogram of miR-186-5p", xlab = "| \u0394 Cq | of miR-186-5p")
+summary(miRNA_pheno$miR_186_5p_a2)
+sd(miRNA_pheno$miR_186_5p_a2, na.rm = T)

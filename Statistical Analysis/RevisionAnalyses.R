@@ -369,3 +369,5 @@ cor.test.plus(cor.test(miRNA_pheno$FN_Tscore, miRNA_pheno$miR186))
 
 summary(lm(f8cbtobmd~miR186+AGE8+HGT8+WGT8,data = pheno_fem))
 summary(lm(f8cbtobmd~miR19a+AGE8+HGT8+WGT8,data = pheno_fem))
+sd(miRNA_pheno$miR_19a_3p, na.rm = T)
+sd(miRNA_pheno$miR_186_5p_a2, na.rm = T)
